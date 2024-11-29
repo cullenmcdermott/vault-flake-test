@@ -22,7 +22,7 @@
     in
     {
       packages = forAllSystems (system: {
-        default =
+        vault =
           let
             pkgs = nixpkgs.legacyPackages.${system};
           in
