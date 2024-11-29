@@ -17,8 +17,7 @@
         "x86_64-darwin"
         "aarch64-darwin"
       ];
-      # Helper to generate outputs for each system
-      forAllSystems = nixpkgs.lib.genAttrs systems;
+      forAllSystems = f: nixpkgs.lib.genAttrs systems (system: f system);
     in
     {
       packages = forAllSystems (system: {
