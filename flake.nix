@@ -37,12 +37,5 @@
           };
         default = self.packages.${system}.vault;
       });
-      apps = forAllSystems (system: {
-        vault = {
-          type = "app";
-          program = "${self.packages.${system}.vault}/bin/vault";
-        };
-        default = self.apps.${system}.vault;
-      });
     };
 }
