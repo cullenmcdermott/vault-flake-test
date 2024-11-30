@@ -32,7 +32,7 @@
               rev = "v1.17.0";
               sha256 = "sha256-jnX3sJJIe62y5p5w7xs5IQ5xE/9aWzM02H2x/p7E9gc=";
             };
-            vendorHash = "sha256-vT1n4FN0s9rQFj4HuXPm6lvNdzWZMyrzeWAanHOQqCg";
+            vendorHash = "sha256-vElTK22fIu+pGml+1lQvKyDAAfed16A9NQTEdu5dU58=";
             subPackages = [ "." ];
           };
         default = self.packages.${system}.vault;
