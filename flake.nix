@@ -30,12 +30,19 @@
               owner = "hashicorp";
               repo = "vault";
               rev = "v1.17.0";
-              sha256 = "sha256-rWaHseFFpKgb6xh8NiitJBLy2Jh8hiu4n4+gcwHXElg="; # Replace with actual sha
+              sha256 = "sha256-jnX3sJJIe62y5p5w7xs5IQ5xE/9aWzM02H2x/p7E9gc=";
             };
             vendorHash = "sha256-vT1n4FN0s9rQFj4HuXPm6lvNdzWZMyrzeWAanHOQqCg";
             subPackages = [ "." ];
           };
         default = self.packages.${system}.vault;
+      });
+      apps = forAllSystems (system: {
+        vault = {
+          type = "app";
+          program = "${self.packages.${system}.vault}/bin/vault";
+        };
+        default = self.apps.${system}.vault;
       });
     };
 }
